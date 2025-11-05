@@ -96,12 +96,12 @@ true = c(beta1, beta2, alpha1, alpha2, varb2, rho)  # vector of true parameter v
 s = seq(lw, up, ev)  # sequence of indices of the posterior samples after burn-in and thinning
 
 ## Estimates
-MEAN = apply(postSamp[s,], 2, "mean")  # vector of posterior mean
-BIAS = MEAN - true  # vector of posterior bias
-RB = BIAS/true  # # vector of posterior mean relative bias
-VAR = apply(postSamp[s,], 2, "var")  # # vector of posterior variance
-SE = sqrt(VAR + BIAS^2)  # # vector of posterior standard error
-CRED = matrix(apply(postSamp[s,], 2, "hdi"), ncol = 2, byrow = T) # vector of highest posterior density credible interval (HPDCI)
+MEAN = apply(postSamp[s,], 2, "mean")  # vector of posterior mean of the parameters
+BIAS = MEAN - true  # vector of posterior bias of the parameters
+RB = BIAS/true  # vector of posterior mean relative bias of the parameters
+VAR = apply(postSamp[s,], 2, "var")  # vector of posterior variance of the parameters
+SE = sqrt(VAR + BIAS^2)  # vector of posterior standard error of the parameters
+CRED = matrix(apply(postSamp[s,], 2, "hdi"), ncol = 2, byrow = T) # vector of highest posterior density credible interval (HPDCI) of the parameters
 
 ESTIM = cbind(round(cbind(MEAN, RB, SE, Lower_HPDCI = CRED[,1], Upper_HPDCI = CRED[,2]), 3)) # store the estimates from a single dataset
 rownames(ESTIM) = c("beta_{10}", "beta_{11}", "beta_{1C}", "beta_{1S}", "beta_{20}", "beta_{21}", "beta_{2C}", "beta_{2S}", 
