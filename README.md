@@ -1,2 +1,2 @@
 # Zero-Inflated-LCRM-Model
-Rcpp and R Programming of the two-stage LCRM model under zero-inflation
+The codes are written in both Rcpp and R software. First run the Rcpp code, then run the R code to get the results.
