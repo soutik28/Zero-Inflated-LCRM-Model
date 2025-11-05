@@ -30,8 +30,8 @@ x = matrix(0, n, m)  # linear covariate
 b1 = rep(0, n); b2 = rep(0, n)  # random effects
 thetaX = rep(0, n)  # circular covariate
 thetaY = matrix(0, n, m)  # circular response
-thXzero = rep(0, n)  # latent variable theta_{X}^*
-thYzero = matrix(0, n, m)  # latent variable theta_{Y}^*
+thXzero = rep(0, n)  # latent variable theta_{X}^{*}
+thYzero = matrix(0, n, m)  # latent variable theta_{Y}^{*}
 
 ## Generating zero inflated circular covariate as well as longitudinal circular response
 set.seed(100)  # setting the seed
