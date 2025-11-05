@@ -57,8 +57,8 @@ for(i in 1:n){
 }
 vData = cbind(1, c(v))  # design matrix of Stage-II
 xData = cbind(1, c(t(x)))  # design matrix of Stage-I excluding the circular covariate
-thXzero = circular(thXzero)  # vector of latent variable theta_{X}^*
-thYzero = circular(c(t(thYzero)))  # vector of latent variable theta_{Y}^*
+thXzero = circular(thXzero)  # vector of latent variable theta_{X}^{*}
+thYzero = circular(c(t(thYzero)))  # vector of latent variable theta_{Y}^{*}
 
 mean(ifelse(thXzero == 0, 1, 0))  # proportion of zeros in the circular covariate
 mean(ifelse(thYzero == 0, 1, 0))  # proportion of zeros in the longitudinal circular response
