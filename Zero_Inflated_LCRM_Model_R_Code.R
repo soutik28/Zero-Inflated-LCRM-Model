@@ -15,8 +15,8 @@ beta2 = c(-1.3, 0.8, 2.1, 2.4)  # beta_{2} vector
 alpha1 = c(-6.4, 4.5)  # alpha_{1} vector
 alpha2 = c(1.8, -0.8)  # alpha_{2} vector
 rho = 0.5  # rho
-varb2 = 2  # sigma_{2}^2
-varb1 = 1/(varb2 * (1 - rho^2))  # sigma_{1}^2
+varb2 = 2  # sigma_{2}^{2}
+varb1 = 1/(varb2 * (1 - rho^2))  # sigma_{1}^{2}
 Sigb = matrix(c(varb1, rho * sqrt(varb1) * sqrt(varb2), rho * sqrt(varb1) * sqrt(varb2), varb2), 2, 2)  # Sigma_{b} matrix
 
 ## Sample size
@@ -105,6 +105,6 @@ CRED = matrix(apply(postSamp[s,], 2, "hdi"), ncol = 2, byrow = T) # vector of hi
 
 ESTIM = cbind(round(cbind(MEAN, RB, SE, Lower_HPDCI = CRED[,1], Upper_HPDCI = CRED[,2]), 3)) # store the estimates from a single dataset
 rownames(ESTIM) = c("beta_{10}", "beta_{11}", "beta_{1C}", "beta_{1S}", "beta_{20}", "beta_{21}", "beta_{2C}", "beta_{2S}", 
-                    "alpha_{10}", "alpha_{11}", "alpha_{20}", "alpha_{21}", "sigma_{2}^2", "rho")
+                    "alpha_{10}", "alpha_{11}", "alpha_{20}", "alpha_{21}", "sigma_{2}^{2}", "rho")
 cbind(Parameter = true, ESTIM)  # print the summary table
 
